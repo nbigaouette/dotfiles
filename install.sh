@@ -14,6 +14,9 @@ function run_cmd() {
 }
 
 
+pushd ${SCRIPT_DIR}
+
+
 pushd to_link
 
 # Normal files
