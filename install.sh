@@ -30,7 +30,6 @@ popd
 for f in ${files_list[*]}; do
     new_dot_file="${INSTALL_DIR}/.${f}"
     new_dir="$(dirname ${new_dot_file})"
-    # echo "f: ${f}   new_dot_file: ${new_dot_file}   new_dir: ${new_dir}"
 
     mkdir -p ${new_dir}
 
@@ -55,7 +54,6 @@ popd
 for f in ${files_list[*]}; do
     append_dot_file="${INSTALL_DIR}/.${f}"
     append_dir="$(dirname ${new_dot_file})"
-    echo "f: ${f}   new_dot_file: ${new_dot_file}   append_dir: ${append_dir}"
 
     cmd="mkdir -p ${append_dir}"
     run_cmd ${cmd}
@@ -77,7 +75,6 @@ popd
 export INSTALL_DIR=${INSTALL_DIR}
 
 for f in ${files_list[*]}; do
-    echo "f: ${f}"
     cmd="${SCRIPT_DIR}/to_run/${f}"
     run_cmd ${cmd}
 done
