@@ -1,0 +1,14 @@
+
+# Part of https://github.com/nbigaouette/dotfiles
+
+# enable bash completion in interactive shells
+[[ -f /etc/bash_completion ]] && source /etc/bash_completion
+
+
+# Use neovim if available, else fallback to vim
+if [[ $(command -v nvim &> /dev/null) ]]; then
+    export EDITOR="nvim"
+else
+    export EDITOR="vim"
+fi
+
