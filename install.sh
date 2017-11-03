@@ -33,8 +33,13 @@ for f in ${files_list[*]}; do
     # echo "f: ${f}   new_dot_file: ${new_dot_file}   new_dir: ${new_dir}"
 
     mkdir -p ${new_dir}
-    cmd="ln -s ${SCRIPT_DIR}/to_link/${f} ${new_dot_file}"
-    run_cmd ${cmd}
+
+    if [[ -e ${new_dot_file} ]]; then
+        echo "WARNING: File ${new_dot_file} already exists. Skipping."
+    else
+        cmd="ln -s ${SCRIPT_DIR}/to_link/${f} ${new_dot_file}"
+        run_cmd ${cmd}
+    fi
 done
 
 
