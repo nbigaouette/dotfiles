@@ -37,3 +37,25 @@ for f in ${files_list[*]}; do
 done
 
 
+
+pushd to_append
+
+# Normal files
+files_list=($(find * -type f -print))
+
+popd
+
+
+for f in ${files_list[*]}; do
+    append_dot_file="${INSTALL_DIR}/.${f}"
+    append_dir="$(dirname ${new_dot_file})"
+    echo "f: ${f}   new_dot_file: ${new_dot_file}   append_dir: ${append_dir}"
+
+    cmd="mkdir -p ${append_dir}"
+    run_cmd ${cmd}
+
+    cmd="cat to_append/${f} >> ${append_dot_file}"
+    run_cmd ${cmd}
+done
+
+
