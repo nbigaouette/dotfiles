@@ -1,4 +1,0 @@
-[submodule "to_link/tmux/plugins/tpm"]
-	path = to_link/tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm.git
-	branch = master
