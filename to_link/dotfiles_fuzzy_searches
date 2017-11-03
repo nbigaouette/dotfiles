@@ -55,3 +55,11 @@ fgao() {
   fi
 }
 
+# Git reset (remove from index)
+fgr() {
+  files_list=($(git diff --name-only --cached | fzf --height 30%))
+  if [[ ${#files_list[*]} -gt 0 ]]; then
+    git reset HEAD ${files_list[*]}
+  fi
+}
+
