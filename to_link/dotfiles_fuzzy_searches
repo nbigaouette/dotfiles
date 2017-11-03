@@ -63,3 +63,12 @@ fgr() {
   fi
 }
 
+# Git checkout -- (discard changes)
+fgd() {
+  files_list=($(git ls-files --modified | fzf --height 30%))
+  if [[ ${#files_list[*]} -gt 0 ]]; then
+    git checkout -- ${files_list[*]}
+  fi
+}
+
+
