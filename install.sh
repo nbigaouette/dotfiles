@@ -32,9 +32,7 @@ for f in ${files_list[*]}; do
     new_dir="$(dirname ${new_dot_file})"
     # echo "f: ${f}   new_dot_file: ${new_dot_file}   new_dir: ${new_dir}"
 
-    cmd="mkdir -p ${new_dir}"
-    run_cmd ${cmd}
-
+    mkdir -p ${new_dir}
     cmd="ln -s ${SCRIPT_DIR}/to_link/${f} ${new_dot_file}"
     run_cmd ${cmd}
 done
