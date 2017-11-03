@@ -34,7 +34,7 @@ alias fgmb='git merge --no-ff $(git branch | fzf --height 40%)'
 
 
 # git checkout <branch>
-fgbr() {
+fgcbr() {
   local branches branch
   branches=$(git branch) &&
   branch=$(echo "$branches" | fzf-tmux -d 15 +m) &&
