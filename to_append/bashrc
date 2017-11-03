@@ -12,3 +12,6 @@ else
     export EDITOR="vim"
 fi
 
+
+source ${HOME}/.fancybash
+
