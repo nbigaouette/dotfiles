@@ -37,3 +37,21 @@ fsa() {
   ssh-add -D
   ssh-add ${sshkey}
 }
+
+
+# -----------------------------------------------------------------------------
+# Git add (modified files)
+fga() {
+  files_list=($(git ls-files --modified | fzf --height 30%))
+  if [[ ${#files_list[*]} -gt 0 ]]; then
+    git add ${files_list[*]}
+  fi
+}
+# Git add (untracked files)
+fgao() {
+  files_list=($(git ls-files --others | fzf --height 30%))
+  if [[ ${#files_list[*]} -gt 0 ]]; then
+    git add ${files_list[*]}
+  fi
+}
+
