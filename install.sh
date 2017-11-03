@@ -81,6 +81,12 @@ popd
 export INSTALL_DIR=${INSTALL_DIR}
 
 for f in ${files_list[*]}; do
+    read -p "About to execute 'to_run/${f}'. Proceed? [y/N] " answer
+    case $yn in
+        [Yy]* ) ;;
+        * ) echo "Skipping."; continue;;
+    esac
+
     cmd="${SCRIPT_DIR}/to_run/${f}"
     run_cmd ${cmd}
 done
