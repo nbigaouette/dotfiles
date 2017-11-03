@@ -3,6 +3,7 @@
 alias nf='nvim $(fzf --height 40%)'
 
 # -----------------------------------------------------------------------------
+# https://junegunn.kr/2015/03/fzf-tmux/
 # https://github.com/junegunn/fzf/wiki/examples#tmux
 # tm - create new tmux session, or switch to existing one. Works from within tmux too. (@bag-man)
 # `tm` will allow you to select your tmux session via fzf.
@@ -17,20 +18,6 @@ tm() {
 }
 
 # -----------------------------------------------------------------------------
-# https://junegunn.kr/2015/03/fzf-tmux/
-# git checkout <branch>
-fbr() {
-  local branches branch
-  branches=$(git branch) &&
-  branch=$(echo "$branches" | fzf-tmux -d 15 +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //")
-}
-
-# git merge --no-ff <branch>
-alias gmb='git merge --no-ff $(git branch | fzf --height 40%)'
-
-
-# -----------------------------------------------------------------------------
 # Change ssh keys in agent, useful for pushing to github using different accounts
 fsa() {
   sshkey=$(find ~/.ssh -name id_*.pub | sed "s|.pub||g" | fzf --height=5%)
@@ -40,6 +27,20 @@ fsa() {
 
 
 # -----------------------------------------------------------------------------
+# Git
+
+# git merge --no-ff <branch>
+alias gmb='git merge --no-ff $(git branch | fzf --height 40%)'
+
+
+# git checkout <branch>
+fbr() {
+  local branches branch
+  branches=$(git branch) &&
+  branch=$(echo "$branches" | fzf-tmux -d 15 +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //")
+}
+
 # Git add (modified files)
 fga() {
   files_list=($(git ls-files --modified | fzf --height 30%))
