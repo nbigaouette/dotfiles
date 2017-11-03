@@ -14,6 +14,7 @@ fi
 
 
 source ${HOME}/.dotfiles_fancybash
+source ${HOME}/.dotfiles_aliases
 source ${HOME}/.dotfiles_fuzzy_searches
 source ${HOME}/.dotfiles_ssh_agent
 
