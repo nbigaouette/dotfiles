@@ -1,4 +1,5 @@
 
+# #############################################################################
 # Part of https://github.com/nbigaouette/dotfiles
 
 # enable bash completion in interactive shells
@@ -28,4 +29,6 @@ case "$-" in
     bind '"\e[B"':history-search-forward
     bind '"\M-w"':"\"\C-k\C-ahistory | grep '^ *[0-9]* *\C-e.'\C-m\""
 esac
+
+# #############################################################################
 
