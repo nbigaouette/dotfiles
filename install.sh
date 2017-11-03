@@ -56,8 +56,8 @@ for f in ${files_list[*]}; do
     append_dir="$(dirname ${new_dot_file})"
 
     read -p "About to append 'to_append/${f}' to ${append_dot_file}. Proceed? [y/N] " answer
-    case $yn in
-        [Yy]* ) ;;
+    case ${answer} in
+        [Yy] ) ;;
         * ) echo "Skipping."; continue;;
     esac
 
@@ -82,8 +82,8 @@ export INSTALL_DIR=${INSTALL_DIR}
 
 for f in ${files_list[*]}; do
     read -p "About to execute 'to_run/${f}'. Proceed? [y/N] " answer
-    case $yn in
-        [Yy]* ) ;;
+    case ${answer} in
+        [Yy] ) ;;
         * ) echo "Skipping."; continue;;
     esac
 
