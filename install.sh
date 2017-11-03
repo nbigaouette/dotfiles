@@ -59,3 +59,19 @@ for f in ${files_list[*]}; do
 done
 
 
+
+pushd to_run
+
+# Normal files
+files_list=($(find * -type f -print))
+
+popd
+
+
+export INSTALL_DIR=${INSTALL_DIR}
+
+for f in ${files_list[*]}; do
+    echo "f: ${f}"
+    cmd="${SCRIPT_DIR}/to_run/${f}"
+    run_cmd ${cmd}
+done
