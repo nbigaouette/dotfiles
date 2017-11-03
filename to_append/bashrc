@@ -13,5 +13,5 @@ else
 fi
 
 
-source ${HOME}/.fancybash
+source ${HOME}/.dotfiles_fancybash
 
