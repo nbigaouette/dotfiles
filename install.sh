@@ -55,6 +55,12 @@ for f in ${files_list[*]}; do
     append_dot_file="${INSTALL_DIR}/.${f}"
     append_dir="$(dirname ${new_dot_file})"
 
+    read -p "About to append 'to_append/${f}' to ${append_dot_file}. Proceed? [y/N] " answer
+    case $yn in
+        [Yy]* ) ;;
+        * ) echo "Skipping."; continue;;
+    esac
+
     cmd="mkdir -p ${append_dir}"
     run_cmd ${cmd}
 
