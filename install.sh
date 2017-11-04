@@ -35,6 +35,10 @@ for f in ${files_list[*]}; do
 
     if [[ -e ${new_dot_file} ]]; then
         echo "WARNING: File ${new_dot_file} already exists. Skipping."
+    elif [[ -L ${new_dot_file} ]]; then
+        echo "WARNING: Symbolic link ${new_dot_file} already exists. Overwriting."
+        cmd="ln -sf ${SCRIPT_DIR}/to_link/${f} ${new_dot_file}"
+        run_cmd ${cmd}
     else
         cmd="ln -s ${SCRIPT_DIR}/to_link/${f} ${new_dot_file}"
         run_cmd ${cmd}
