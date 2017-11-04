@@ -329,6 +329,9 @@ match OverLength /\%81v.\+/             " Set the overflowing width
 set list
 
 
+" Resource the config
+command! R so ~/.vimrc
+
 " Make :W save, just like :w
 command! W w
 
