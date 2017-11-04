@@ -30,96 +30,57 @@ endif
 
 
 " ##############################################################################
-" Setting up Vundle - the vim plugin bundler - and make sure it is installed.
-" https://github.com/VundleVim/Vundle.vim
-" https://github.com/arusahni/dotfiles/blob/45c6655d46d1f672cc36f4e81c2a674484739ebc/vimrc
-let vundle_installed=1
-let vundle_readme=s:editor_root . '/bundle/vundle/README.md'
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    " silent execute "! mkdir -p ~/." . s:editor_path_name . "/bundle"
-    silent call mkdir(s:editor_root . '/bundle', "p")
-    silent execute "!git clone https://github.com/VundleVim/Vundle.vim " . s:editor_root . "/bundle/vundle"
-    let vundle_installed=0
-endif
-let &rtp = &rtp . ',' . s:editor_root . '/bundle/vundle/'
-call vundle#rc(s:editor_root . '/bundle')
+" Setting up vim-plug, a minimalist Vim plugin manager.
+" https://github.com/junegunn/vim-plug
+" https://github.com/arusahni/dotfiles/blob/master/vimrc#L68-L122
 
+" Install vim-plug if not already present
+if empty(glob(s:editor_root . '/autoload/plug.vim'))
+    autocmd VimEnter * echom "Downloading and installing vim-plug..."
+    silent execute "!curl -fLo " . s:editor_root . "/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    autocmd VimEnter * PlugInstall
+endif
 
 " ------------------------------------------------------------------------------
-" Plugins and their configurations
+" Plugins installation
+" NOTE: Configurations _must_ be put _after_ `vim-plug` has been initialized
+"       using its `call plug#end()`.
 " Inspiration: http://phaazon.blogspot.ca/2017/07/on-programming-workflows.html
+
+call plug#begin(s:editor_root . '/plugged')
 
 " ...........................................
 " Color scheme / Theme
 " Solarized:
 "     https://github.com/altercation/vim-colors-solarized
 "     http://ethanschoonover.com/solarized/vim-colors-solarized
-Bundle 'altercation/vim-colors-solarized'
-syntax enable
-set background=dark
-" https://github.com/altercation/vim-colors-solarized#important-note-for-terminal-users
-" For iTerm2: Settings -> Profiles -> Color Presets -> Solarized Dark
-" Without this, the colors are screwed and one has to uncomment the
-" folllowing:
-" let g:solarized_termcolors=256
-colorscheme solarized
-
+Plug 'altercation/vim-colors-solarized'
 
 " ...........................................
 " Fancy start screen
-Bundle 'mhinz/vim-startify'
-
-" ...........................................
-" Status line and its theme
-if has('nvim')
-    Bundle 'itchyny/lightline.vim'
-    Bundle 'jacoborus/tender.vim'
-
-    " Useless with lightline
-    set noshowmode
-    let s:editor_root=expand("~/.vim")
-
-    let g:lightline = {
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-        \ },
-        \ 'component_function': {
-        \   'gitbranch': 'fugitive#head'
-        \ },
-        \ }
-endif
-
-
-
+Plug 'mhinz/vim-startify'
 
 " ...........................................
 " Git status in gutter
-Bundle 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
-Bundle 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " ...........................................
 " Markdown, tables and table of content
-Bundle 'godlygeek/tabular'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'mzlogin/vim-markdown-toc'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'mzlogin/vim-markdown-toc'
 
 " ...........................................
 " TOML
-Bundle 'cespare/vim-toml'
-
+Plug 'cespare/vim-toml'
 
 " ...........................................
 " Python mode
 " https://github.com/python-mode/python-mode
 " https://github.com/python-mode/python-mode/blob/develop/doc/pymode.txt
-Bundle 'python-mode/python-mode'
-" set nofoldenable        " Disable folding on opening
-let g:pymode_rope = 0   " Disable Rope support
-let g:pymode_lint_cwindow = 1   " Auto open cwindow (quickfix) if any errors have been found
+Plug 'python-mode/python-mode'
 
 " ...........................................
 " Adds file type glyphs/icons to popular Vim plugins
@@ -127,16 +88,124 @@ let g:pymode_lint_cwindow = 1   " Auto open cwindow (quickfix) if any errors hav
 "   Clone https://github.com/ryanoasis/nerd-fonts.git and ./install.sh
 "   https://github.com/ryanoasis/vim-devicons#installation
 "   https://github.com/ryanoasis/nerd-fonts#font-installation
-Bundle 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " ...........................................
 " Navigate through the window
 " Default key binding: <Leader><Leader>
 " Note: Needs to appear _before_ the 'let mapleader' command.
 " https://github.com/easymotion/vim-easymotion
-" Bundle 'easymotion/vim-easymotion'
-"
-" " Use the plugin for the search through "/"
+" Plug 'easymotion/vim-easymotion'
+
+" ...........................................
+" Comments toggling
+Plug 'scrooloose/nerdcommenter'
+
+" ...........................................
+" Atom/Sublime like multiple cursors
+Plug 'terryma/vim-multiple-cursors'
+
+" ...........................................
+" Autocompletion
+" https://github.com/roxma/nvim-completion-manager
+Plug 'roxma/nvim-completion-manager'
+
+" ...........................................
+" Minimap
+" Note: Requires both Python 2 and Python 3 packages:
+"       pip2 install neovim && pip3 install neovim
+" Plug 'severin-lemaignan/vim-minimap'
+
+" ...........................................
+" Rust
+Plug 'rust-lang/rust.vim'
+
+" ...........................................
+" Plug 'Shougo/denite.nvim'
+
+" ...........................................
+" Displays function signatures from completions in the command line.
+" https://github.com/Shougo/echodoc.vim
+Plug 'Shougo/echodoc.vim'
+
+" ...........................................
+" Tree visualization
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" ...........................................
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+
+" ...........................................
+" To try/test
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'MattesGroeger/vim-bookmarks'
+" Plug 'luochen1990/rainbow'
+
+
+" ...........................................
+" NeoVim / Vim specific plugins
+
+if has('nvim')
+    " neovim specific (vim non-compatible) plugins
+
+    " ...........................................
+    " Status line and its theme
+    Plug 'itchyny/lightline.vim'
+    Plug 'jacoborus/tender.vim'
+
+    " ...........................................
+    " Rust's RLS support
+    " https://github.com/autozimu/LanguageClient-neovim
+    " Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'autozimu/LanguageClient-neovim'
+else
+    " vim specific (neovim non-compatible) plugins
+endif
+
+" End of plugin initialization
+call plug#end()
+" ##############################################################################
+
+
+" ##############################################################################
+" Plugins configuration
+" NOTE: Those _must_ be put _after_ `vim-plug` has been initialized
+"       using its `call plug#end()`.
+
+" ...........................................
+" Color scheme / Theme
+" Solarized:
+"     https://github.com/altercation/vim-colors-solarized
+"     http://ethanschoonover.com/solarized/vim-colors-solarized
+syntax enable
+set background=dark
+" https://github.com/altercation/vim-colors-solarized#important-note-for-terminal-users
+" For iTerm2: Settings -> Profiles -> Color Presets -> Solarized Dark
+" Without this, the colors are screwed and one has to uncomment the
+" folllowing:
+" let g:solarized_termcolors=256
+" Use Solarized color scheme. Use `:silent!` to ignore error in case
+" the color scheme is not present.
+:silent! colorscheme solarized
+
+" ...........................................
+" Python mode
+" https://github.com/python-mode/python-mode
+" https://github.com/python-mode/python-mode/blob/develop/doc/pymode.txt
+" set nofoldenable        " Disable folding on opening
+let g:pymode_rope = 0   " Disable Rope support
+let g:pymode_lint_cwindow = 1   " Auto open cwindow (quickfix) if any errors have been found
+
+" ...........................................
+" Navigate through the window
+" Default key binding: <Leader><Leader>
+" Note: Needs to appear _before_ the 'let mapleader' command.
+" https://github.com/easymotion/vim-easymotion
+" Use the plugin for the search through "/"
 " map  / <Plug>(easymotion-sn)
 " omap / <Plug>(easymotion-tn)
 "
@@ -145,10 +214,7 @@ Bundle 'ryanoasis/vim-devicons'
 
 " ...........................................
 " Comments toggling
-Bundle 'scrooloose/nerdcommenter'
-
 filetype plugin on
-
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
@@ -164,39 +230,6 @@ let g:NERDTrimTrailingWhitespace = 1
 let mapleader=","
 set timeout timeoutlen=1500
 
-
-" ...........................................
-" Atom/Sublime like multiple cursors
-Bundle "terryma/vim-multiple-cursors"
-
-" ...........................................
-" Autocompletion
-" https://github.com/roxma/nvim-completion-manager
-Bundle 'roxma/nvim-completion-manager'
-
-" ...........................................
-" Minimap
-" Note: Requires both Python 2 and Python 3 packages:
-"       pip2 install neovim && pip3 install neovim
-" Bundle 'severin-lemaignan/vim-minimap'
-
-" ...........................................
-" Rust
-Bundle 'rust-lang/rust.vim'
-
-" ...........................................
-" Tree visualization
-Bundle 'scrooloose/nerdtree'
-Bundle 'Xuyuanp/nerdtree-git-plugin'
-Bundle 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-" ...........................................
-" Fuzzy finder
-Bundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Use 'F' as command to search for a file to open
-:command F FZF
-
-
 " Map key "Ctrl+\" to toggle tree
 nnoremap <C-\> :NERDTreeToggle<CR>
 
@@ -208,20 +241,30 @@ nnoremap <C-\> :NERDTreeToggle<CR>
 " Ctrl + w l --> Takes focus left
 
 " ...........................................
-" To try/test
-" Bundle 'ctrlpvim/ctrlp.vim'
-" Bundle 'MattesGroeger/vim-bookmarks'
-" Bundle 'luochen1990/rainbow'
+" Fuzzy finder
+" Use 'F' as command to search for a file to open
+:command F FZF
 
 
-" ##############################################################################
-if vundle_installed == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :BundleInstall
+
+if has('nvim')
+    " neovim specific (vim non-compatible) plugins
+
+    " ...........................................
+    " Status line and its theme
+    " Useless with lightline
+    set noshowmode
+    let s:editor_root=expand("~/.vim")
+    let g:lightline = {
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'fugitive#head'
+        \ },
+        \ }
 endif
-" Setting up Vundle - the vim plugin bundler end
-
 
 
 " ##############################################################################
