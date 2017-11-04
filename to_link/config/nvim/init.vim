@@ -23,7 +23,14 @@ if has("unix")
     let g:python_host_prog='/usr/bin/python2'
     let g:python3_host_prog='/usr/bin/python3'
     if s:uname == "Darwin\n"
-        let g:python_host_prog='/usr/local/bin/python2'
+        " WARNING: On macOS/OSX, /usr/bin/python is the system python which
+        "          does _not_ include `pip`. Either install pip for the
+        "          the system interpreter (which is not recommanded) or
+        "          install a Python 2 interpreter through homebrew, which can
+        "          also confuse the system...
+        "          I installed pip on the system interpreter after all.
+        " let g:python_host_prog='/usr/local/bin/python2'
+        let g:python_host_prog='/usr/bin/python'
         let g:python3_host_prog='/usr/local/bin/python3'
     endif
 endif
