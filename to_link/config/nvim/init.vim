@@ -201,6 +201,8 @@ set background=dark
 " set nofoldenable        " Disable folding on opening
 let g:pymode_rope = 0   " Disable Rope support
 let g:pymode_lint_cwindow = 1   " Auto open cwindow (quickfix) if any errors have been found
+let g:pymode_options_max_line_length = 99
+let g:pymode_folding = 0    " Disable folding
 
 " ...........................................
 " Navigate through the window
