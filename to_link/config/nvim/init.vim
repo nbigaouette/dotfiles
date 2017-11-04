@@ -138,10 +138,12 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+" ...........................................
+" Fuzzy opening of files using "ctrl+p"
+Plug 'ctrlpvim/ctrlp.vim'
 
 " ...........................................
 " To try/test
-" Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'luochen1990/rainbow'
 
