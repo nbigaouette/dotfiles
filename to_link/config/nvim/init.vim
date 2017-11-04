@@ -346,6 +346,10 @@ match OverLength /\%81v.\+/             " Set the overflowing width
 " Highlight whitespaces
 set list
 
+" Enable persistent undo so that undo history persists across vim sessions
+set undofile
+set undodir=~/.vim/undo
+
 
 " Resource the config
 command! R so ~/.vimrc
