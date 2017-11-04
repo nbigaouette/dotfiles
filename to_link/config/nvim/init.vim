@@ -338,6 +338,8 @@ command! Q q
 " Make :W save, just like :w
 command! W w
 
+command! PU PlugUpdate
+
 " Map "qq" in edit mode to escape
 " http://vim.wikia.com/wiki/Avoid_the_escape_key
 imap qq <Esc>
