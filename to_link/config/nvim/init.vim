@@ -226,6 +226,7 @@ endif
 
 " ##############################################################################
 " General vim/neomvim configurations
+
 " Tabs settings (see https://stackoverflow.com/a/1878983)
 set tabstop=4           " Tabs width (maximum widht) is 4 spaces
 set shiftwidth=4        " Indentation is 4 spaces
