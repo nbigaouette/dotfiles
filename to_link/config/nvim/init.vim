@@ -334,3 +334,8 @@ set list
 " Map "qq" in edit mode to escape
 " http://vim.wikia.com/wiki/Avoid_the_escape_key
 :imap qq <Esc>
+
+" Map "ww" in edit mode to escape AND save
+imap ww <Esc>:w<cr>
+
+
