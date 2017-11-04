@@ -14,7 +14,7 @@
 " Allow using ~/.vim as a symbolic link to ~/.nvim
 " https://github.com/arusahni/dotfiles/blob/45c6655d46d1f672cc36f4e81c2a674484739ebc/vimrc#L28-L53
 if has('nvim')
-    let s:editor_root=expand("~/.nvim")
+    let s:editor_root=expand("~/.config/nvim")
 else
     let s:editor_root=expand("~/.vim")
 endif
