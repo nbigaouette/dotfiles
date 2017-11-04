@@ -245,7 +245,7 @@ nnoremap <C-\> :NERDTreeToggle<CR>
 " ...........................................
 " Fuzzy finder
 " Use 'F' as command to search for a file to open
-:command F FZF
+command! F FZF
 
 
 
@@ -330,7 +330,7 @@ set list
 
 
 " Make :W save, just like :w
-command W w
+command! W w
 
 " Map "qq" in edit mode to escape
 " http://vim.wikia.com/wiki/Avoid_the_escape_key
