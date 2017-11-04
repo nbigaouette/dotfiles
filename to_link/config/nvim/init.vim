@@ -332,6 +332,9 @@ set list
 " Resource the config
 command! R so ~/.vimrc
 
+" Make :Q quit, just like :q
+command! Q q
+
 " Make :W save, just like :w
 command! W w
 
