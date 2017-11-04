@@ -175,7 +175,7 @@ if has('nvim')
     " Rust's RLS support
     " https://github.com/autozimu/LanguageClient-neovim
     " Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'autozimu/LanguageClient-neovim'
+    " Plug 'autozimu/LanguageClient-neovim'
 else
     " vim specific (neovim non-compatible) plugins
 endif
