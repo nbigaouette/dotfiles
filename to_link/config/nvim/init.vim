@@ -150,6 +150,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ctrlpvim/ctrlp.vim'
 
 " ...........................................
+" Undo history as a graph
+" https://github.com/simnalamburt/vim-mundo
+Plug 'simnalamburt/vim-mundo'
+
+" ...........................................
 " To try/test
 " Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'luochen1990/rainbow'
@@ -256,6 +261,10 @@ nnoremap <C-\> :NERDTreeToggle<CR>
 " Use 'F' as command to search for a file to open
 command! F FZF
 
+" ...........................................
+" Undo history as a graph
+" https://github.com/simnalamburt/vim-mundo
+nnoremap <C-U> :MundoToggle<CR>
 
 
 if has('nvim')
