@@ -347,4 +347,14 @@ imap qq <Esc>
 " Map "ww" in edit mode to escape AND save
 imap ww <Esc>:w<cr>
 
+" Move between split (`:sp`, `:vsp`) buffers
+" using "Alt-Shift-{Left,Right,Up,Down}"
+nnoremap <A-S-Down> <C-W><C-J>
+nnoremap <A-S-Up> <C-W><C-K>
+nnoremap <A-S-Right> <C-W><C-L>
+nnoremap <A-S-Left> <C-W><C-H>
+
+" When splitting place cursor in below or right buffer
+set splitbelow
+set splitright
 
