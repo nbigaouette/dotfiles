@@ -118,6 +118,12 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'roxma/nvim-completion-manager'
 
 " ...........................................
+" Syntax checking hacks
+" https://github.com/vim-syntastic/syntastic
+Plug 'scrooloose/syntastic'
+
+
+" ...........................................
 " Rust
 Plug 'rust-lang/rust.vim'
 
