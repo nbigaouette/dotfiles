@@ -359,6 +359,8 @@ command! Q q
 " Make :W save, just like :w
 command! W w
 
+command! Wq wq
+
 command! PU PlugUpdate
 
 " Map "qq" in edit mode to escape
