@@ -159,6 +159,12 @@ Plug 'simnalamburt/vim-mundo'
 " https://github.com/MattesGroeger/vim-bookmarks
 Plug 'MattesGroeger/vim-bookmarks'
 
+" ...........................................
+" Status line
+" https://github.com/vim-airline/vim-airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 
 " ...........................................
 " NeoVim / Vim specific plugins
@@ -168,8 +174,8 @@ if has('nvim')
 
     " ...........................................
     " Status line and its theme
-    Plug 'itchyny/lightline.vim'
-    Plug 'jacoborus/tender.vim'
+    " Plug 'itchyny/lightline.vim'
+    " Plug 'jacoborus/tender.vim'
 
     " ...........................................
     " Rust's RLS support
@@ -266,23 +272,29 @@ command! F FZF
 nnoremap <C-U> :MundoToggle<CR>
 
 
+" ...........................................
+" Status line
+" https://github.com/vim-airline/vim-airline
+let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
+
 if has('nvim')
     " neovim specific (vim non-compatible) plugins
 
-    " ...........................................
-    " Status line and its theme
-    " Useless with lightline
-    set noshowmode
-    let s:editor_root=expand("~/.vim")
-    let g:lightline = {
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-        \ },
-        \ 'component_function': {
-        \   'gitbranch': 'fugitive#head'
-        \ },
-        \ }
+    " " ...........................................
+    " " Status line and its theme
+    " " Useless with lightline
+    " set noshowmode
+    " let s:editor_root=expand("~/.vim")
+    " let g:lightline = {
+    "     \ 'active': {
+    "     \   'left': [ [ 'mode', 'paste' ],
+    "     \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    "     \ },
+    "     \ 'component_function': {
+    "     \   'gitbranch': 'fugitive#head'
+    "     \ },
+    "     \ }
 endif
 
 
