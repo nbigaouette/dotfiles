@@ -118,12 +118,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'roxma/nvim-completion-manager'
 
 " ...........................................
-" Minimap
-" Note: Requires both Python 2 and Python 3 packages:
-"       pip2 install neovim && pip3 install neovim
-" Plug 'severin-lemaignan/vim-minimap'
-
-" ...........................................
 " Rust
 Plug 'rust-lang/rust.vim'
 
