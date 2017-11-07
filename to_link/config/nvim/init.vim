@@ -155,9 +155,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'simnalamburt/vim-mundo'
 
 " ...........................................
-" To try/test
-" Plug 'MattesGroeger/vim-bookmarks'
-" Plug 'luochen1990/rainbow'
+" Toggle (mm) and navigate (mn/mp) bookmarks
+" https://github.com/MattesGroeger/vim-bookmarks
+Plug 'MattesGroeger/vim-bookmarks'
 
 
 " ...........................................
