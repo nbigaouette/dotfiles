@@ -165,6 +165,9 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" ...........................................
+" Synchronize tmux's status line with vim-airline
+Plug 'edkolev/tmuxline.vim'
 
 " ...........................................
 " NeoVim / Vim specific plugins
