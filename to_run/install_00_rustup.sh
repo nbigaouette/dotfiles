@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ command -v rustup &> /dev/null ]]; then
+if [[ -x "$(command -v rustup)" ]]; then
     echo "Warning: Rustup already installed."
 else
     # https://rustup.rs/

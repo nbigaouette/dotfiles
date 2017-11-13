@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ command -v exa &> /dev/null ]]; then
+if [[ -x "$(command -v exa)" ]]; then
     echo "Warning: exa already installed."
 else
     cargo install exa

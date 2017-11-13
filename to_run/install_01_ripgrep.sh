@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ command -v rg &> /dev/null ]]; then
+if [[ -x "$(command -v rg)" ]]; then
     echo "Warning: ripgrep already installed."
 else
     cargo install ripgrep
