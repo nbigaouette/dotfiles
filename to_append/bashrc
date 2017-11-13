@@ -7,10 +7,13 @@
 
 
 # Use neovim if available, else fallback to vim
-if [[ $(command -v nvim) ]]; then
+if [[ -x "$(command -v nvim)" ]]; then
+    # Use nvim as editor if present
     export EDITOR="nvim"
 else
+    # Fallback to vim if nvim is not present
     export EDITOR="vim"
+    alias nvim=vim
 fi
 
 
