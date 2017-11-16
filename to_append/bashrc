@@ -17,10 +17,10 @@ else
 fi
 
 
-source ${HOME}/.dotfiles_fancybash
-source ${HOME}/.dotfiles_aliases
-source ${HOME}/.dotfiles_fuzzy_searches
-source ${HOME}/.dotfiles_ssh_agent
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+for dotfile in ${SCRIPT_DIR}/.dotfiles*; do
+    source "${dotfile}"
+done
 
 
 # Up and down arrows search history
