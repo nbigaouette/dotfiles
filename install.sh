@@ -33,14 +33,17 @@ for f in ${files_list[*]}; do
 
     mkdir -p ${new_dir}
 
-    if [[ -e ${new_dot_file} ]]; then
+    link_type="-s"  # Symbolic link
+    # link_type=""  # Hard link
+
+    if [[ -f ${new_dot_file} ]]; then
         echo "WARNING: File ${new_dot_file} already exists. Skipping."
-    elif [[ -L ${new_dot_file} ]]; then
-        echo "WARNING: Symbolic link ${new_dot_file} already exists. Overwriting."
-        cmd="ln -sf ${SCRIPT_DIR}/to_link/${f} ${new_dot_file}"
-        run_cmd ${cmd}
     else
-        cmd="ln -s ${SCRIPT_DIR}/to_link/${f} ${new_dot_file}"
+        if [[ -L ${new_dot_file} ]]; then
+            echo "WARNING: Symbolic link ${new_dot_file} already exists. Overwriting."
+            rm -f ${new_dot_file}
+        fi
+        cmd="ln ${link_type} ${SCRIPT_DIR}/to_link/${f} ${new_dot_file}"
         run_cmd ${cmd}
     fi
 done
