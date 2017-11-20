@@ -130,11 +130,6 @@ Plug 'scrooloose/syntastic'
 Plug 'rust-lang/rust.vim'
 
 " ...........................................
-" Asynchronous Lint Engine
-" https://github.com/w0rp/ale
-Plug 'w0rp/ale'
-
-" ...........................................
 " Requires Python3 & pip3 install neovim
 " Plug 'Shougo/denite.nvim'
 
@@ -187,6 +182,11 @@ if has('nvim')
     " Status line and its theme
     " Plug 'itchyny/lightline.vim'
     " Plug 'jacoborus/tender.vim'
+
+    " ...........................................
+    " Asynchronous Lint Engine
+    " https://github.com/w0rp/ale
+    Plug 'w0rp/ale'
 
     " ...........................................
     " Rust's RLS support
