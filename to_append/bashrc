@@ -5,7 +5,11 @@
 # enable bash completion in interactive shells
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
-SCRIPT_DIR="$( cd "$( dirname "$(realpath \"${BASH_SOURCE[0]}\")" )" && pwd )"
+if [[ "`uname`" == "Darwin" ]]; then
+    SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+else
+    SCRIPT_DIR="$( cd "$( dirname "$(realpath "${BASH_SOURCE[0]}")" )" && pwd )"
+fi
 for dotfile in ${SCRIPT_DIR}/.dotfiles_*; do
     source "${dotfile}"
 done
