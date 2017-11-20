@@ -5,33 +5,9 @@
 # enable bash completion in interactive shells
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
-
-# Use neovim if available, else fallback to vim
-if [[ -x "$(command -v nvim)" ]]; then
-    # Use nvim as editor if present
-    export EDITOR="nvim"
-else
-    # Fallback to vim if nvim is not present
-    export EDITOR="vim"
-    alias nvim=vim
-fi
-
-
 SCRIPT_DIR="$( cd "$( dirname "$(realpath \"${BASH_SOURCE[0]}\")" )" && pwd )"
 for dotfile in ${SCRIPT_DIR}/.dotfiles_*; do
     source "${dotfile}"
 done
-
-
-# Up and down arrows search history
-# http://www.geocities.com/h2428/petar/bash_hist.htm
-# Don't run if not in interactive shell
-case "$-" in
-*i*)
-    bind '"\e[A"':history-search-backward
-    bind '"\e[B"':history-search-forward
-    bind '"\M-w"':"\"\C-k\C-ahistory | grep '^ *[0-9]* *\C-e.'\C-m\""
-esac
-
 # #############################################################################
 
