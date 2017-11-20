@@ -2,8 +2,8 @@
 " ~/.config/nvim/init.vim
 
 " Some plugins require the python plugin:
-" pip2 install --user neovim
-" pip3 install --user neovim
+" pip2 install --user --upgrade neovim
+" pip3 install --user --upgrade neovim
 
 
 " Inspired by:
