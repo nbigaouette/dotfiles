@@ -4,6 +4,8 @@
 " Some plugins require the python plugin:
 " pip2 install --user --upgrade neovim
 " pip3 install --user --upgrade neovim
+" autozimu/LanguageClient-neovim requires this:
+" pip3 install --upgrade typing
 
 
 " Inspired by:
@@ -183,10 +185,13 @@ if has('nvim')
     " ...........................................
     " Rust's RLS support
     " https://github.com/autozimu/LanguageClient-neovim
-    " Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-    " Plug 'autozimu/LanguageClient-neovim'
+    Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 else
     " vim specific (neovim non-compatible) plugins
+
+    " autozimu/LanguageClient-neovim requires those two
+    " Plug 'roxma/nvim-yarp'
+    " Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 " End of plugin initialization
@@ -293,6 +298,21 @@ let g:airline_powerline_fonts = 1
 
 if has('nvim')
     " neovim specific (vim non-compatible) plugins
+
+
+    let g:LanguageClient_serverCommands = { 'rust': ['rustup', 'run', 'nightly', 'rls'] }
+    " Automatically start language servers.
+    let g:LanguageClient_autoStart = 1
+    nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+    nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+    nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+    nnoremap <silent> gs :call LanguageClient_textDocument_documentSymbol()<CR>
+    " nnoremap <silent> rf :call LanguageClient_textDocument_formatting()<CR>
+
+    " ...........................................
+    " Asynchronous Lint Engine
+    " https://github.com/w0rp/ale
+    let g:ale_linters = {'rust': ['rls']}
 
     " " ...........................................
     " " Status line and its theme
