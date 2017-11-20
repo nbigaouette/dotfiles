@@ -120,12 +120,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'roxma/nvim-completion-manager'
 
 " ...........................................
-" Syntax checking hacks
-" https://github.com/vim-syntastic/syntastic
-Plug 'scrooloose/syntastic'
-
-
-" ...........................................
 " Rust
 Plug 'rust-lang/rust.vim'
 
@@ -194,6 +188,11 @@ if has('nvim')
     Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 else
     " vim specific (neovim non-compatible) plugins
+
+    " ...........................................
+    " Syntax checking hacks
+    " https://github.com/vim-syntastic/syntastic
+    Plug 'vim-syntastic/syntastic'
 
     " autozimu/LanguageClient-neovim requires those two
     " Plug 'roxma/nvim-yarp'
