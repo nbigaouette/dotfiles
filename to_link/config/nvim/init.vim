@@ -130,6 +130,10 @@ Plug 'scrooloose/syntastic'
 Plug 'rust-lang/rust.vim'
 
 " ...........................................
+" Asynchronous Lint Engine
+" https://github.com/w0rp/ale
+Plug 'w0rp/ale'
+
 " Plug 'Shougo/denite.nvim'
 
 " ...........................................
