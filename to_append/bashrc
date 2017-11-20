@@ -18,7 +18,7 @@ fi
 
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-for dotfile in ${SCRIPT_DIR}/.dotfiles*; do
+for dotfile in ${SCRIPT_DIR}/.dotfiles_*; do
     source "${dotfile}"
 done
 
