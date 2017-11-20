@@ -134,6 +134,8 @@ Plug 'rust-lang/rust.vim'
 " https://github.com/w0rp/ale
 Plug 'w0rp/ale'
 
+" ...........................................
+" Requires Python3 & pip3 install neovim
 " Plug 'Shougo/denite.nvim'
 
 " ...........................................
