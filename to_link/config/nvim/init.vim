@@ -89,7 +89,9 @@ Plug 'cespare/vim-toml'
 " Python mode
 " https://github.com/python-mode/python-mode
 " https://github.com/python-mode/python-mode/blob/develop/doc/pymode.txt
-Plug 'python-mode/python-mode'
+" https://github.com/python-mode/python-mode/issues/783#issuecomment-320490153
+" https://github.com/python-mode/python-mode/issues/774
+Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop'}
 
 " ...........................................
 " Adds file type glyphs/icons to popular Vim plugins
