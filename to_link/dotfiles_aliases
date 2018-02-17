@@ -27,9 +27,7 @@ alias now="date +%Y%m%d_%Hh%M"
 
 alias a="atom ."
 alias aa="atom -a ."
-
-alias c="clear"
-
+alias k="clear; tmux clear-history"
 alias n="nvim"
 alias nv="nvim"
 alias v="nvim"
