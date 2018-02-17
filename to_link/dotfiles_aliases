@@ -25,6 +25,7 @@ esac
 
 alias now="date +%Y%m%d_%Hh%M"
 
+alias c="code ."
 alias a="atom ."
 alias aa="atom -a ."
 alias k="clear; tmux clear-history"
