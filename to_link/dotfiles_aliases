@@ -71,17 +71,6 @@ alias rm='rm -i'
 alias cdt='cd ~/Downloads'
 
 
-# Sudo's
-# Command line apps
-#alias sudo='sudo -E'
-#alias su='sudo -i'
-#alias su='sudo /bin/bash'
-alias su='sudo su -'
-alias snano='sudo nano'
-alias svim='sudo vim'
-alias powertop='sudo powertop'
-
-
 ############################
 # Functions
 
