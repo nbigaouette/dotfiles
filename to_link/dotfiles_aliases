@@ -45,7 +45,7 @@ function cdnow()
 #     fi
 # }
 
-alias resource="source /etc/profile && source ~/.bashrc"
+alias resource="source ~/.bashrc"
 
 alias locate='locate -i'
 #alias grep='grep -n'
