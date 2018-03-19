@@ -46,6 +46,7 @@ function cdnow()
 # }
 
 alias resource="source ~/.bashrc"
+alias r="resource"
 
 alias locate='locate -i'
 #alias grep='grep -n'
