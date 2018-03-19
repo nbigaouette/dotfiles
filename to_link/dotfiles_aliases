@@ -57,8 +57,6 @@ alias free='free -m'
 alias grpe='grep'
 alias top="htop"
 alias untar="tar -xvf"
-#alias untar="tar -zxvf"
-#alias untarj="tar -jxvf"
 alias pingg="ping -c 3 www.google.com"
 function pss() {
 	#ps auxf | grep -i "$@" | grep -v grep | grep --color=auto -i "$@"
