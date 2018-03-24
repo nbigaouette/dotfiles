@@ -25,6 +25,13 @@ alias eai="while [[ 0 ]]; do sleep 2 && ssh eai; done"
 alias sublime="/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text &> /dev/null"
 alias p4m="/Applications/p4merge.app/Contents/Resources/launchp4merge"
 
+function cdm()
+{
+    mkdir -p ${1}
+    cd $_
+}
+
+
 function cdnow()
 {
     current_date=`now`
