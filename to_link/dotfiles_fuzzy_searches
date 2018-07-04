@@ -24,7 +24,7 @@ tm() {
 # -----------------------------------------------------------------------------
 # Change ssh keys in agent, useful for pushing to github using different accounts
 fsa() {
-  sshkey=$(find ~/.ssh -name id_*.pub | sed "s|.pub||g" | fzf --height=5%)
+  sshkey=$(find ~/.ssh -name "id_*.pub" | sed "s|.pub||g" | fzf --height=5%)
   ssh-add -D
   ssh-add ${sshkey}
 }
