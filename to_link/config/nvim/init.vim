@@ -308,7 +308,9 @@ if has('nvim')
     " neovim specific (vim non-compatible) plugins
 
 
-    let g:LanguageClient_serverCommands = { 'rust': ['rustup', 'run', 'nightly', 'rls'] }
+    let g:LanguageClient_serverCommands = {
+        \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+        \ }
     " Automatically start language servers.
     let g:LanguageClient_autoStart = 1
     nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
