@@ -142,7 +142,8 @@ posix_ls_args="-l -h -G"
 if [[ -x "$(command -v exa)" ]]; then
     # Use 'exa' as 'ls' replacement
     # See https://the.exa.website/
-    alias ls="exa --binary --group --git --header --long"
+    # alias ls="exa --binary --group --git --header --long"
+    alias ls="exa --binary --group --header --long"
 else
     alias ls="ls ${posix_ls_args}"
 fi
