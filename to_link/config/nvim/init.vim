@@ -119,7 +119,8 @@ Plug 'terryma/vim-multiple-cursors'
 " ...........................................
 " Autocompletion
 " https://github.com/roxma/nvim-completion-manager
-Plug 'roxma/nvim-completion-manager'
+" Deprecated: replaced by https://github.com/ncm2/ncm2 (not ready yet)
+" Plug 'roxma/nvim-completion-manager'
 
 " ...........................................
 " Rust
