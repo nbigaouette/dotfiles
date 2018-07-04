@@ -310,6 +310,7 @@ if has('nvim')
 
     let g:LanguageClient_serverCommands = {
         \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+        \ 'python': ['pyls'],
         \ }
     " Automatically start language servers.
     let g:LanguageClient_autoStart = 1
