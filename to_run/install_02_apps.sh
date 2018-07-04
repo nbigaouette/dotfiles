@@ -12,7 +12,7 @@ function append_to_install() {
         echo "Warning: ${app_name} already installed."
     else
         to_install="${to_install} ${app_pkg}"
-    fi    
+    fi
 }
 
 append_to_install exa
