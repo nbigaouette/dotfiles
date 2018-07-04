@@ -11,3 +11,7 @@ cmd="rustup component add rustfmt-preview"
 echo ${cmd}
 ${cmd}
 
+cmd="rustup component add rls-preview rust-analysis rust-src"
+echo ${cmd}
+${cmd}
+
