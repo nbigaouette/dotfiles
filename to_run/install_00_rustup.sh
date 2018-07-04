@@ -7,3 +7,7 @@ else
     curl https://sh.rustup.rs -sSf | sh
 fi
 
+cmd="rustup component add rustfmt-preview"
+echo ${cmd}
+${cmd}
+
