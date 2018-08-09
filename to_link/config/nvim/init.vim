@@ -229,6 +229,11 @@ set background=dark
 :silent! colorscheme solarized
 
 " ...........................................
+" Rust
+" https://github.com/rust-lang/rust.vim
+let g:rustfmt_autosave = 1
+
+" ...........................................
 " Python mode
 " https://github.com/python-mode/python-mode
 " https://github.com/python-mode/python-mode/blob/develop/doc/pymode.txt
