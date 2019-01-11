@@ -7,11 +7,7 @@ else
     curl https://sh.rustup.rs -sSf | sh
 fi
 
-cmd="rustup component add rustfmt-preview"
-echo ${cmd}
-${cmd}
-
-cmd="rustup component add rls-preview rust-analysis rust-src"
+cmd="rustup component add clippy"
 echo ${cmd}
 ${cmd}
 
