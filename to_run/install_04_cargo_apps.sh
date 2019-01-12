@@ -16,6 +16,7 @@ function append_to_install() {
 }
 
 append_to_install cw
+append_to_install broot
 
 if [[ "${to_install}" == "" ]]; then
     echo "Warning: Nothing to install."
