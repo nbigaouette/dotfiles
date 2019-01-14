@@ -15,6 +15,7 @@ function append_to_install() {
     fi
 }
 
+append_to_install lsd
 append_to_install xsv
 append_to_install bat
 append_to_install hexyl
