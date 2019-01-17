@@ -21,6 +21,7 @@ append_to_install cargo-license
 append_to_install cargo-outdated
 append_to_install cargo-tree
 append_to_install cargo-update cargo-install-update
+append_to_install cargo-with
 
 if [[ "${to_install}" == "" ]]; then
     echo "Warning: Nothing to install."
