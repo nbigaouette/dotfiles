@@ -1,11 +1,13 @@
 #!/bin/bash
 
 set -e
+set -o nounset
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 INSTALL_DIR="${INSTALL_DIR:-${HOME}}"
 
+SCRIPT_DIR_REL=${SCRIPT_DIR#"${HOME}/"}
 
 function run_cmd() {
     cmd="${@}"
@@ -43,7 +45,7 @@ for f in ${files_list[*]}; do
             echo "WARNING: Symbolic link ${new_dot_file} already exists. Overwriting."
             rm -f ${new_dot_file}
         fi
-        cmd="ln ${link_type} ${SCRIPT_DIR}/to_link/${f} ${new_dot_file}"
+        cmd="ln ${link_type} ${SCRIPT_DIR_REL}/to_link/${f} ${new_dot_file}"
         run_cmd ${cmd}
     fi
 done
