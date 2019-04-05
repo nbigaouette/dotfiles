@@ -15,3 +15,6 @@ else
     alias nvim="vim"
 fi
 
+# https://github.com/sharkdp/bat#using-a-different-pager
+export BAT_PAGER="less -RFiSX"
+
