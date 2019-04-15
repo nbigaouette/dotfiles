@@ -166,3 +166,5 @@ xbat() {
     cat "${@}" | xsv table | bat --wrap never
 }
 
+alias cdtmp='cd $(mktemp -d)'
+
