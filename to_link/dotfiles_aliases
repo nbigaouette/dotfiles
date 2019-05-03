@@ -168,3 +168,18 @@ xbat() {
 
 alias cdtmp='cd $(mktemp -d)'
 
+rust_musl_builder() {
+    # NOTE: The first time cargo is run through this, it's going to fail.
+    # To fix, run this command:
+    #   sudo chown -R rust:rust /home/rust/.cargo/git /home/rust/.cargo/registry /home/rust/src/target
+    # Following invocations will work.
+    # Reference: https://hub.docker.com/r/ekidd/rust-musl-builder/
+    cmd="docker run --rm -it
+        -v cargo-git:/home/rust/.cargo/git
+        -v cargo-registry:/home/rust/.cargo/registry
+        -v target:/home/rust/src/target
+        -v \$(pwd):/home/rust/src ekidd/rust-musl-builder
+        ${@}"
+    echo ${cmd}
+    eval ${cmd}
+}
