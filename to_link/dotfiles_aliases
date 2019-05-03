@@ -167,6 +167,7 @@ xbat() {
 alias cdtmp='cd $(mktemp -d)'
 
 rust_musl_builder() {
+    rust_version="1.34.1"
     # NOTE: The first time cargo is run through this, it's going to fail.
     # To fix, run this command:
     #   sudo chown -R rust:rust /home/rust/.cargo/git /home/rust/.cargo/registry /home/rust/src/target
@@ -176,7 +177,7 @@ rust_musl_builder() {
         -v cargo-git:/home/rust/.cargo/git
         -v cargo-registry:/home/rust/.cargo/registry
         -v target:/home/rust/src/target
-        -v \$(pwd):/home/rust/src ekidd/rust-musl-builder
+        -v \$(pwd):/home/rust/src ekidd/rust-musl-builder:${rust_version}
         ${@}"
     echo ${cmd}
     eval ${cmd}
