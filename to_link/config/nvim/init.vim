@@ -314,7 +314,7 @@ if has('nvim')
 
 
     let g:LanguageClient_serverCommands = {
-        \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+        \ 'rust': ['rustup', 'run', 'stable', 'ra_lsp_server'],
         \ 'python': ['pyls'],
         \ }
     " Automatically start language servers.
@@ -328,7 +328,10 @@ if has('nvim')
     " ...........................................
     " Asynchronous Lint Engine
     " https://github.com/w0rp/ale
-    let g:ale_linters = {'rust': ['rls']}
+    " let g:ale_linters = {'rust': ['rls']}
+    let g:ale_linters = {
+        \ 'rust': ['cargo'],
+        \ }
 
     " " ...........................................
     " " Status line and its theme
