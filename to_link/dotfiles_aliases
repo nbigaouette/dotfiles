@@ -94,13 +94,10 @@ function aur() {
 }
 
 
-if [[ -x "$(command -v gpg)" ]]; then
-    alias gl='git log --graph        --pretty=format:"%C(green)%h %C(reset)%C(magenta)%G? %C(reset) %s %C(blue)by %an (%ar) %C(red) %d"'
-    alias gla='git log --graph --all --pretty=format:"%C(green)%h %C(reset)%C(magenta)%G?%C(reset)%C(red)%d %C(reset) %s %C(blue)by %an (%ar)"'
-else
-    alias gl='git log --graph        --pretty=format:"%C(green)%h %C(reset) %s %C(blue)by %an (%ar) %C(red) %d"'
-    alias gla='git log --graph --all --pretty=format:"%C(green)%h %C(reset)%C(red)%d%C(reset) %s %C(blue)by %an (%ar)"'
-fi
+alias glg='git log --graph        --pretty=format:"%C(green)%h %C(reset)%C(magenta)%G? %C(reset) %s %C(blue)by %an (%ar) %C(red) %d"'
+alias glag='git log --graph --all --pretty=format:"%C(green)%h %C(reset)%C(magenta)%G?%C(reset)%C(red)%d %C(reset) %s %C(blue)by %an (%ar)"'
+alias gl='git log --graph        --pretty=format:"%C(green)%h %C(reset) %s %C(blue)by %an (%ar) %C(red) %d"'
+alias gla='git log --graph --all --pretty=format:"%C(green)%h %C(reset)%C(red)%d%C(reset) %s %C(blue)by %an (%ar)"'
 alias glm='gl --first-parent master'
 
 
