@@ -329,9 +329,15 @@ if has('nvim')
     " Asynchronous Lint Engine
     " https://github.com/w0rp/ale
     " let g:ale_linters = {'rust': ['rls']}
+    let g:ale_fix_on_save = 1
+    let g:ale_fixers = {
+        \ 'rust': ['rustfmt', 'trim_whitespace'],
+        \ }
+    let g:ale_linters_explicit = 1
     let g:ale_linters = {
         \ 'rust': ['cargo'],
         \ }
+    let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 
     " " ...........................................
     " " Status line and its theme
