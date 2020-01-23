@@ -182,6 +182,170 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: true
 
+# https://github.com/alacritty/alacritty/wiki/Color-schemes
+
+
+# Colors (Terminal.app)
+colors:
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xb6b6b6'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x990000'
+    green:   '0x00a600'
+    yellow:  '0x999900'
+    blue:    '0x0000b2'
+    magenta: '0xb200b2'
+    cyan:    '0x00a6b2'
+    white:   '0xbfbfbf'
+
+  # Bright colors
+  bright:
+    black:   '0x666666'
+    red:     '0xe50000'
+    green:   '0x00d900'
+    yellow:  '0xe5e500'
+    blue:    '0x0000ff'
+    magenta: '0xe500e5'
+    cyan:    '0x00e5e5'
+    white:   '0xe5e5e5'
+
+
+# # Colors (Oxide)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x212121'
+#     foreground: '0xc0c5ce'
+#     bright_foreground: '0xf3f4f5'
+
+#   cursor:
+#     text: '0x212121'
+#     cursor: '0xc0c5ce'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x212121'
+#     red:     '0xe57373'
+#     green:   '0xa6bc69'
+#     yellow:  '0xfac863'
+#     blue:    '0x6699cc'
+#     magenta: '0xc594c5'
+#     cyan:    '0x5fb3b3'
+#     white:   '0xc0c5ce'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x5c5c5c'
+#     red:     '0xe57373'
+#     green:   '0xa6bc69'
+#     yellow:  '0xfac863'
+#     blue:    '0x6699cc'
+#     magenta: '0xc594c5'
+#     cyan:    '0x5fb3b3'
+#     white:   '0xf3f4f5'
+
+# # Colors (One Dark)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x282c34'
+#     foreground: '0xabb2bf'
+
+#   # Normal colors
+#   normal:
+#     # NOTE: Use '0x131613' for the `black` color if you'd like to see
+#     # black text on the background.
+#     black:   '0x282c34'
+#     red:     '0xe06c75'
+#     green:   '0x98c379'
+#     yellow:  '0xd19a66'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0xabb2bf'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x5c6370'
+#     red:     '0xe06c75'
+#     green:   '0x98c379'
+#     yellow:  '0xd19a66'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0xffffff'
+
+# # Colors (Solarized Dark)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x002b36' # base03
+#     foreground: '0x839496' # base0
+
+#   # Cursor colors
+#   cursor:
+#     text:   '0x002b36' # base03
+#     cursor: '0x839496' # base0
+
+#   # Normal colors
+#   normal:
+#     black:   '0x073642' # base02
+#     red:     '0xdc322f' # red
+#     green:   '0x859900' # green
+#     yellow:  '0xb58900' # yellow
+#     blue:    '0x268bd2' # blue
+#     magenta: '0xd33682' # magenta
+#     cyan:    '0x2aa198' # cyan
+#     white:   '0xeee8d5' # base2
+
+#   # Bright colors
+#   bright:
+#     black:   '0x002b36' # base03
+#     red:     '0xcb4b16' # orange
+#     green:   '0x586e75' # base01
+#     yellow:  '0x657b83' # base00
+#     blue:    '0x839496' # base0
+#     magenta: '0x6c71c4' # violet
+#     cyan:    '0x93a1a1' # base1
+#     white:   '0xfdf6e3' # base3
+
+  # # Default colors
+  # primary:
+  #   background: '0x002b36' # base03
+  #   foreground: '0x839496' # base0
+
+  # # Cursor colors
+  # cursor:
+  #   text:   '0x002b36' # base03
+  #   cursor: '0x839496' # base0
+
+  # # Normal colors
+  # normal:
+  #   black:   '0x073642' # base02
+  #   red:     '0xdc322f' # red
+  #   green:   '0x859900' # green
+  #   yellow:  '0xb58900' # yellow
+  #   blue:    '0x268bd2' # blue
+  #   magenta: '0xd33682' # magenta
+  #   cyan:    '0x2aa198' # cyan
+  #   white:   '0xeee8d5' # base2
+
+  # # Bright colors
+  # bright:
+  #   black:   '0x002b36' # base03
+  #   red:     '0xcb4b16' # orange
+  #   green:   '0x586e75' # base01
+  #   yellow:  '0x657b83' # base00
+  #   blue:    '0x839496' # base0
+  #   magenta: '0x6c71c4' # violet
+  #   cyan:    '0x93a1a1' # base1
+  #   white:   '0xfdf6e3' # base3
+
 # Colors (Tomorrow Night Bright)
 #colors:
   # Default colors
