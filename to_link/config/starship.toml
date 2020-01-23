@@ -1,0 +1,47 @@
+# https://starship.rs/config/#aws
+
+
+[directory]
+truncation_length = 8
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[git_branch]
+symbol = "🌱 "
+truncation_length = 20
+truncation_symbol = ""
+
+[git_commit]
+disabled = false
+commit_hash_length = 32
+
+[git_state]
+progress_divider = " of "
+cherry_pick = "🍒 PICKING"
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged.value = "++"
+staged.style = "green"
+staged_count.enabled = true
+staged_count.style = "green"
+renamed = "👅"
+deleted = "🗑"
+
+[memory_usage]
+disabled = false
+show_percentage = true
+show_swap = false
+threshold = -1
+symbol = " "
+separator = "/"
+style = "bold dimmed green"
