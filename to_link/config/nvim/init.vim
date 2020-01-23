@@ -63,7 +63,7 @@ call plug#begin(s:editor_root . '/plugged')
 " Solarized:
 "     https://github.com/altercation/vim-colors-solarized
 "     http://ethanschoonover.com/solarized/vim-colors-solarized
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 
 " ...........................................
 " Fancy start screen
@@ -167,7 +167,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " ...........................................
 " Synchronize tmux's status line with vim-airline
-Plug 'edkolev/tmuxline.vim'
+" Plug 'edkolev/tmuxline.vim'
 
 " ...........................................
 " NeoVim / Vim specific plugins
@@ -226,7 +226,7 @@ set background=dark
 " let g:solarized_termcolors=256
 " Use Solarized color scheme. Use `:silent!` to ignore error in case
 " the color scheme is not present.
-:silent! colorscheme solarized
+" :silent! colorscheme solarized
 
 " ...........................................
 " Rust
