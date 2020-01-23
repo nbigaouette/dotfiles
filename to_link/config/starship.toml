@@ -10,7 +10,7 @@ charging_symbol = "⚡️"
 discharging_symbol = "💀"
 
 [git_branch]
-symbol = "🌱 "
+# symbol = "🌱 "
 truncation_length = 20
 truncation_symbol = ""
 
