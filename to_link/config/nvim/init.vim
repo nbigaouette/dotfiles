@@ -306,8 +306,11 @@ nnoremap <C-U> :MundoToggle<CR>
 " ...........................................
 " Status line
 " https://github.com/vim-airline/vim-airline
-let g:airline_solarized_bg='dark'
+" let g:airline_theme='solarized'
+" let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
+" let g:airline_theme='deus'
+let g:airline_theme='luna'
 
 if has('nvim')
     " neovim specific (vim non-compatible) plugins
