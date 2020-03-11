@@ -45,7 +45,7 @@ for f in ${files_list[*]}; do
             echo "WARNING: Symbolic link ${new_dot_file} already exists. Overwriting."
             rm -f ${new_dot_file}
         fi
-        cmd="ln ${link_type} ${SCRIPT_DIR_REL}/to_link/${f} ${new_dot_file}"
+        cmd="ln ${link_type} ${SCRIPT_DIR}/to_link/${f} ${new_dot_file}"
         run_cmd ${cmd}
     fi
 done

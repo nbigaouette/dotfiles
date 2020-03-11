@@ -1,0 +1,9 @@
+
+# #############################################################################
+# Part of https://github.com/nbigaouette/dotfiles
+for dotfile in ${HOME}/.dotfiles_*; do
+    if [[ "${dotfile}" != "${SCRIPT_DIR}/.dotfiles_bashrc" ]]; then
+        source "${dotfile}"
+    fi
+done
+# #############################################################################
