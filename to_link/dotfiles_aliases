@@ -18,7 +18,6 @@ function fa() {
 
 alias uofo="while [[ 0 ]]; do sleep 5 && ssh uofo; done"
 alias primus="while [[ 0 ]]; do sleep 5 && ssh primus; done"
-alias eai="while [[ 0 ]]; do sleep 2 && ssh eai; done"
 
 alias sublime="/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text &> /dev/null"
 alias p4m="/Applications/p4merge.app/Contents/Resources/launchp4merge"
