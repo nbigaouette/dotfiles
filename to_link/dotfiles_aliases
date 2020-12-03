@@ -106,6 +106,7 @@ alias gk='gitk --all &'
 alias gps='git push'
 alias gpl='git pull'
 alias gpp='git pull --prune'
+alias gpb='git push -u origin `git branch --show-current`'
 
 # http://www.catonmat.net/blog/git-aliases/
 alias ga='git add'
@@ -118,10 +119,12 @@ alias gma='git commit -am'
 alias gb='git branch --all --verbose'
 alias gci='git init && git commit --allow-empty -m "Initial commit"'
 alias gc='git checkout'
+alias gcm='git checkout master'
 alias gra='git remote add'
 alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
+alias gnb='git checkout -b'
 
 
 function check_memory() {
@@ -148,16 +151,24 @@ alias la="ls -a"
 # Call this to update tmux's forwarded ssh agent
 # https://stackoverflow.com/a/40967729
 alias fixssh='export $(tmux showenv SSH_AUTH_SOCK)'
+
+
+alias bat="bat --wrap=never"
+export BAT_PAGER="less -iSR"
 zbat() {
     cat "${@}" | gunzip | bat
 }
 
 zxt() {
-    zbat "${@}" | xsv table | bat --wrap never
+    zbat "${@}" | xsv table | bat
 }
 
 xbat() {
-    cat "${@}" | xsv table | bat --wrap never
+    cat "${@}" | xsv table | bat
+}
+
+jbat() {
+    cat "${@}" | jq '.' | bat
 }
 
 alias cdtmp='cd $(mktemp -d)'
@@ -178,3 +189,5 @@ rust_musl_builder() {
     echo ${cmd}
     eval ${cmd}
 }
+
+alias kb=kubectl
