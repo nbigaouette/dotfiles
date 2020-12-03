@@ -1,21 +1,24 @@
 # https://starship.rs/config/#aws
 
 
+
+
+
 [directory]
 truncate_to_repo = false
-truncation_length = 8
+truncation_length = 5
 
 [battery]
 full_symbol = "🔋"
 charging_symbol = "⚡️"
 discharging_symbol = "💀"
 
-[cmd_duration]
-min_time = 1
-show_milliseconds = true
+#[cmd_duration]
+#min_time = 1
+#show_milliseconds = true
 
 [git_branch]
-# symbol = "🌱 "
+# success_symbol = "🌱 "
 truncation_length = 32
 truncation_symbol = ""
 
@@ -34,7 +37,7 @@ conflicted = "🏳"
 ahead = "🏎💨"
 behind = "😰"
 diverged = "😵"
-untracked = "🤷‍"
+untracked = "🤷"
 stashed = "📦"
 modified = "📝"
 staged.value = "++"
@@ -49,6 +52,6 @@ deleted = "🗑"
 # show_percentage = true
 # show_swap = false
 # threshold = -1
-# symbol = " "
+# success_symbol = " "
 # separator = "/"
 # style = "bold dimmed green"
