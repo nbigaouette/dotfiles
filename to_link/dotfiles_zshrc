@@ -82,8 +82,10 @@ zle -N down-line-or-beginning-search
 
 
 
-
-
+# https://github.com/zsh-users/antigen
+if [[ ! -a ~/.antigen.zsh ]]; then
+    curl -L git.io/antigen > ~/.antigen.zsh
+fi
 source ~/.antigen.zsh
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
