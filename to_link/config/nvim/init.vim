@@ -410,10 +410,10 @@ au FocusGained * :checktime
 imap <C-d> <C-[>diwi
 
 " https://stackoverflow.com/questions/235439/vim-80-column-layout-concerns
-set colorcolumn=80                      " Column width
-highlight ColorColumn ctermbg=gray      " Add a gray character to highlight the column
-highlight OverLength ctermbg=darkred    " Set the background colour for text overflowing
-match OverLength /\%81v.\+/             " Set the overflowing width
+" set colorcolumn=80                      " Column width
+" highlight ColorColumn ctermbg=gray      " Add a gray character to highlight the column
+" highlight OverLength ctermbg=darkred    " Set the background colour for text overflowing
+" match OverLength /\%81v.\+/             " Set the overflowing width
 
 " Highlight whitespaces
 set list
