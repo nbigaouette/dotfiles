@@ -15,13 +15,20 @@ function append_to_install() {
     fi
 }
 
-append_to_install lsd
-append_to_install xsv
 append_to_install bat
-append_to_install hexyl
 append_to_install exa
+append_to_install gitui
+append_to_install hexyl
+append_to_install htop
+append_to_install lsd
+append_to_install neovim
 append_to_install ripgrep rg
+append_to_install sk
+append_to_install starship
+append_to_install tmux
 append_to_install tokei
+append_to_install xsv
+
 if [[ "`uname`" == "Darwin" ]]; then
     # On homebrew, package is named 'fd'
     append_to_install fd
