@@ -19,7 +19,6 @@ append_to_install cargo-audit
 append_to_install cargo-edit cargo-add
 append_to_install cargo-license
 append_to_install cargo-outdated
-append_to_install cargo-tree
 append_to_install cargo-update cargo-install-update
 append_to_install cargo-watch
 append_to_install cargo-with
