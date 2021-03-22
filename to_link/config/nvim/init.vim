@@ -384,7 +384,7 @@ autocmd BufReadPost *
 " Enable spell check
 " To check: Ctrl+x, s
 "set spell
-set spell spelllang=en_ca
+" set spell spelllang=en_ca
 " Enable mouse mode
 set mouse=a
 " set mouse=a mousemodel=popup
