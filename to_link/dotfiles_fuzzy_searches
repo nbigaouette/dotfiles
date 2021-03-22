@@ -1,6 +1,6 @@
 # https://github.com/junegunn/fzf/
 
-alias nf='nvim $(fzf --height 40%)'
+alias nf='nvim $(sk --height 40%)'
 
 # Use 'fd' to respect .gitignore
 # https://github.com/junegunn/fzf#respecting-gitignore
@@ -18,13 +18,13 @@ tm() {
   if [ $1 ]; then 
     tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
   fi
-  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | sort -r | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
+  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | sort -r | sk --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
 }
 
 # -----------------------------------------------------------------------------
 # Change ssh keys in agent, useful for pushing to github using different accounts
 fsa() {
-  sshkey=$(find ~/.ssh -name "id_*.pub" | sed "s|.pub||g" | fzf --height=5%)
+  sshkey=$(find ~/.ssh -name "id_*.pub" | sed "s|.pub||g" | sk --height=5%)
   ssh-add -D
   ssh-add ${sshkey}
 }
@@ -34,27 +34,27 @@ fsa() {
 # Git
 
 # git merge --no-ff <branch>
-alias fgmb='git merge --no-ff $(git branch | fzf --height 40%)'
+alias fgmb='git merge --no-ff $(git branch | sk --height 40%)'
 
 
 # git checkout <branch>
 fgcbr() {
   local branches branch
   branches=$(git branch) &&
-  branch=$(echo "$branches" | fzf-tmux -d 15 +m) &&
+  branch=$(echo "$branches" | sk --height 5%) &&
   git checkout $(echo "$branch" | sed "s/.* //")
 }
 
 # Git add (modified files)
 fga() {
-  files_list=($(git ls-files --modified | fzf --height 30%))
+  files_list=($(git ls-files --modified | sk --height 30%))
   if [[ ${#files_list[*]} -gt 0 ]]; then
     git add ${files_list[*]}
   fi
 }
 # Git add (untracked files)
 fgao() {
-  files_list=($(git ls-files --others | fzf --height 30%))
+  files_list=($(git ls-files --others | sk --height 30%))
   if [[ ${#files_list[*]} -gt 0 ]]; then
     git add ${files_list[*]}
   fi
@@ -62,7 +62,7 @@ fgao() {
 
 # Git reset (remove from index)
 fgr() {
-  files_list=($(git diff --name-only --cached | fzf --height 30%))
+  files_list=($(git diff --name-only --cached | sk --height 30%))
   if [[ ${#files_list[*]} -gt 0 ]]; then
     git reset HEAD ${files_list[*]}
   fi
@@ -70,7 +70,7 @@ fgr() {
 
 # Git checkout -- (discard changes)
 fgd() {
-  files_list=($(git ls-files --modified | fzf --height 30%))
+  files_list=($(git ls-files --modified | sk --height 30%))
   if [[ ${#files_list[*]} -gt 0 ]]; then
     git checkout -- ${files_list[*]}
   fi
