@@ -76,4 +76,13 @@ fgd() {
   fi
 }
 
-
+gco() {
+  local branches branch stash_name
+  stash_name="Stashing before switching branches (`date +%Y%m%d_%Hh%M`)"
+  branches=$(git branch -a)
+  branch=$(echo "$branches" | sk --height 5%) &&
+  git stash push --message "${stash_name}" &&
+  git checkout $(echo "$branch" | sed "s|^[ \*] ||g" | sed -e "s|remotes/[[:alnum:]]*/||g") &&
+  git stash list | grep "${stash_name}" &> /dev/null &&
+  git stash pop
+}
