@@ -191,3 +191,5 @@ rust_musl_builder() {
 }
 
 alias kb=kubectl
+
+alias git-set-personal-email='git config user.email "nbigaouette@gmail.com"'
