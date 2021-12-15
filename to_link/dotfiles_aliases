@@ -171,6 +171,10 @@ hbat() {
     hexyl "${@}" | bat
 }
 
+bbat() {
+    bat --show-all --wrap=auto "${@}"
+}
+
 jbat() {
     cat "${@}" | jq '.' | bat
 }
