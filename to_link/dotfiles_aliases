@@ -64,8 +64,8 @@ alias top="htop"
 alias untar="tar -xvf"
 alias pingg="ping -c 3 www.google.com"
 function pss() {
-	#ps auxf | grep -i "$@" | grep -v grep | grep --color=auto -i "$@"
-    ps aux | grep -i "$@" | grep -v grep | grep --color=auto -i "$@"
+    #ps auxf | grep -i "$@" | grep -v grep | grep --color=auto -i "$@"
+    ps aux | grep -i "$@" | grep -v grep | grep -v Code42 | grep -v VTDecoderXPCService | grep -v com.apple.CodeSigningHelper | grep -v "no-v8-untrusted-code-mitigations" | grep --color=auto -i "$@"
 }
 alias pstree="ps axjf | less"
 alias scpr='rsync --partial --progress'
