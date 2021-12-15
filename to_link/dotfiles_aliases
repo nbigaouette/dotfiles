@@ -167,6 +167,10 @@ xbat() {
     cat "${@}" | xsv table | bat
 }
 
+hbat() {
+    hexyl "${@}" | bat
+}
+
 jbat() {
     cat "${@}" | jq '.' | bat
 }
